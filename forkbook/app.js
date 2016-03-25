@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var todos = require('./routes/todos');
 var cloud = require('./cloud');
+var jsmediatags = require('jsmediatags');
 
 var app = express();
 
@@ -54,6 +55,17 @@ app.get('/test', function(req, res, next){
 });
 app.get('/pages',function(req, res, next){
   res.redirect('pages');
+})
+app.get('/getID3',function(req, res, next){
+  jsmediatags.read("http://7xsagi.com1.z0.glb.clouddn.com/xuwei%2Fxiyue.mp3", {
+    onSuccess: function(tag) {
+      console.log(tag);
+      res.send(tag);
+    },
+    onError: function(error) {
+      console.log(error.type, error.info);
+    }
+  });
 })
 
 // 可以将一类的路由单独保存在一个文件中
