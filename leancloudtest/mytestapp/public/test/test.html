@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>test</title>
+  </head>
+  <body>
+    <h1 id="welcome" style="color: red;">您好，<span id="name"></span></h1>
+    <script type="text/javascript">
+      var xhr = new XMLHttpRequest();
+      var url = encodeURIComponent(window.location.href);
+      xhr.open('POST','/testall',true);
+      xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+      xhr.send(null);
+      xhr.onreadystatechange = function(){
+        console.log(xhr.readyState+','+xhr.status);
+        if(xhr.readyState==4 && xhr.status==200){
+          var res = JSON.parse(xhr.responseText);
+          console.log(res);
+          document.getElementById('name').innerHTML = res.name;
+        }
+      }
+    </script>
+  </body>
+</html>
