@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>第一个页面</title>
+  </head>
+  <body>
+    <h1>喜悦</h1>
+    <div class="music">
+      <img src="/images/poster-xuwei.jpg" alt="" /><br>
+      <audio src="http://7xsagi.com1.z0.glb.clouddn.com/xuwei%2Fxiyue.mp3" controls="controls" preload="preload"></audio>
+      <button type="button" name="button" onclick="xhr()">获取</button>
+      <div class="info">
+        <h3 id="title"></h3>
+        <h3 id="album"></h3>
+        <h3 id="artist"></h3>
+      </div>
+    </div>
+    <script type="text/javascript">
+        function xhr(){
+          var xhr = new XMLHttpRequest();
+          var url = encodeURIComponent(window.location.href);
+          xhr.open('GET','/getID3',true);
+          xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+          xhr.send(null);
+          xhr.onreadystatechange = function(){
+            console.log(xhr.readyState+','+xhr.status);
+            if(xhr.readyState==4 && xhr.status==200){
+              var res = JSON.parse(xhr.responseText);
+              console.log(res);
+              document.getElementById('title').innerHTML = res.tags.title;
+              document.getElementById('album').innerHTML = res.tags.album;
+              document.getElementById('artist').innerHTML = res.tags.artist;
+            }
+          }
+        }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+node_modules
+start.sh
+
+# VIM
+*~
+*.swp
+.avoscloud/
+npm-debug.log
+.DS_Store
+*/*/images
