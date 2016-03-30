@@ -113,10 +113,6 @@
 		F5292D8F1CA65CAC00980154 = {
 			isa = PBXGroup;
 			children = (
-				F57AF7A91CAB5F4B0006AE3E /* MobileCoreServices.framework */,
-				F57AF7A71CAB5F400006AE3E /* SystemConfiguration.framework */,
-				F57AF7A51CAB5F340006AE3E /* Security.framework */,
-				F57AF7A31CAB5F2B0006AE3E /* CFNetwork.framework */,
 				F5292D9A1CA65CAC00980154 /* FolkMusic */,
 				F5292D991CA65CAC00980154 /* Products */,
 			);
@@ -233,6 +229,10 @@
 		F5292DCA1CA65EF900980154 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F57AF7A91CAB5F4B0006AE3E /* MobileCoreServices.framework */,
+				F57AF7A71CAB5F400006AE3E /* SystemConfiguration.framework */,
+				F57AF7A51CAB5F340006AE3E /* Security.framework */,
+				F57AF7A31CAB5F2B0006AE3E /* CFNetwork.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
