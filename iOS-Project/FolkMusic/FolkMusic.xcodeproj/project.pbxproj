@@ -35,6 +35,10 @@
 		F57AF7A61CAB5F340006AE3E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F57AF7A51CAB5F340006AE3E /* Security.framework */; };
 		F57AF7A81CAB5F400006AE3E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F57AF7A71CAB5F400006AE3E /* SystemConfiguration.framework */; };
 		F57AF7AA1CAB5F4B0006AE3E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F57AF7A91CAB5F4B0006AE3E /* MobileCoreServices.framework */; };
+		F57AF7AF1CAB60E60006AE3E /* DataDownLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = F57AF7AE1CAB60E60006AE3E /* DataDownLoader.m */; };
+		F57AF7B41CAB615B0006AE3E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F57AF7B31CAB615B0006AE3E /* MBProgressHUD.m */; };
+		F57AF7B71CAB71650006AE3E /* MusicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F57AF7B61CAB71650006AE3E /* MusicModel.m */; };
+		F57AF7BA1CAB764A0006AE3E /* ListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F57AF7B91CAB764A0006AE3E /* ListCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +97,15 @@
 		F57AF7A51CAB5F340006AE3E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		F57AF7A71CAB5F400006AE3E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F57AF7A91CAB5F4B0006AE3E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		F57AF7AB1CAB5FE20006AE3E /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		F57AF7AD1CAB60E60006AE3E /* DataDownLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataDownLoader.h; sourceTree = "<group>"; };
+		F57AF7AE1CAB60E60006AE3E /* DataDownLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataDownLoader.m; sourceTree = "<group>"; };
+		F57AF7B21CAB615B0006AE3E /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		F57AF7B31CAB615B0006AE3E /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		F57AF7B51CAB71650006AE3E /* MusicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicModel.h; sourceTree = "<group>"; };
+		F57AF7B61CAB71650006AE3E /* MusicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicModel.m; sourceTree = "<group>"; };
+		F57AF7B81CAB764A0006AE3E /* ListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListCell.h; sourceTree = "<group>"; };
+		F57AF7B91CAB764A0006AE3E /* ListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +142,7 @@
 		F5292D9A1CA65CAC00980154 /* FolkMusic */ = {
 			isa = PBXGroup;
 			children = (
+				F57AF7AB1CAB5FE20006AE3E /* PrefixHeader.pch */,
 				F5292DAC1CA65CAC00980154 /* Info.plist */,
 				F5292D9C1CA65CAC00980154 /* main.m */,
 				F5292D9E1CA65CAC00980154 /* AppDelegate.h */,
@@ -137,8 +151,8 @@
 				F5292DB21CA65DAA00980154 /* Controllers */,
 				F5292DBA1CA65DAA00980154 /* Views */,
 				F5292DB51CA65DAA00980154 /* Models */,
+				F57AF7B01CAB61500006AE3E /* Libs */,
 				F5292DB31CA65DAA00980154 /* Helper */,
-				F5292DB41CA65DAA00980154 /* Libs */,
 				F5292DB61CA65DAA00980154 /* Network */,
 				F5292DB71CA65DAA00980154 /* Resource */,
 				F5292DB81CA65DAA00980154 /* ROOT */,
@@ -165,16 +179,11 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
-		F5292DB41CA65DAA00980154 /* Libs */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Libs;
-			sourceTree = "<group>";
-		};
 		F5292DB51CA65DAA00980154 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F57AF7B51CAB71650006AE3E /* MusicModel.h */,
+				F57AF7B61CAB71650006AE3E /* MusicModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -182,6 +191,7 @@
 		F5292DB61CA65DAA00980154 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				F57AF7AC1CAB60E60006AE3E /* DataManager */,
 				F57AF7711CAB5E7B0006AE3E /* AFNetworking */,
 				F57AF77F1CAB5E7B0006AE3E /* UIKit+AFNetworking */,
 			);
@@ -242,6 +252,8 @@
 			children = (
 				F5292DCE1CA65FA100980154 /* MainViewController.h */,
 				F5292DCF1CA65FA100980154 /* MainViewController.m */,
+				F57AF7B81CAB764A0006AE3E /* ListCell.h */,
+				F57AF7B91CAB764A0006AE3E /* ListCell.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -305,6 +317,32 @@
 				F57AF7931CAB5E7B0006AE3E /* UIWebView+AFNetworking.m */,
 			);
 			path = "UIKit+AFNetworking";
+			sourceTree = "<group>";
+		};
+		F57AF7AC1CAB60E60006AE3E /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				F57AF7AD1CAB60E60006AE3E /* DataDownLoader.h */,
+				F57AF7AE1CAB60E60006AE3E /* DataDownLoader.m */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		F57AF7B01CAB61500006AE3E /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				F57AF7B11CAB615B0006AE3E /* MBProgressHUD */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		F57AF7B11CAB615B0006AE3E /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				F57AF7B21CAB615B0006AE3E /* MBProgressHUD.h */,
+				F57AF7B31CAB615B0006AE3E /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,6 +420,7 @@
 				F57AF7991CAB5E7B0006AE3E /* AFURLSessionManager.m in Sources */,
 				F57AF7971CAB5E7B0006AE3E /* AFURLRequestSerialization.m in Sources */,
 				F57AF79D1CAB5E7B0006AE3E /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				F57AF7B71CAB71650006AE3E /* MusicModel.m in Sources */,
 				F57AF7A01CAB5E7B0006AE3E /* UIProgressView+AFNetworking.m in Sources */,
 				F5292DC91CA65E2F00980154 /* RootModel.m in Sources */,
 				F57AF79C1CAB5E7B0006AE3E /* AFNetworkActivityIndicatorManager.m in Sources */,
@@ -392,11 +431,14 @@
 				F57AF7941CAB5E7B0006AE3E /* AFHTTPSessionManager.m in Sources */,
 				F5292DD01CA65FA100980154 /* MainViewController.m in Sources */,
 				F57AF7A21CAB5E7B0006AE3E /* UIWebView+AFNetworking.m in Sources */,
+				F57AF7B41CAB615B0006AE3E /* MBProgressHUD.m in Sources */,
 				F5292D9D1CA65CAC00980154 /* main.m in Sources */,
 				F5292DBD1CA65DEE00980154 /* RootViewController.m in Sources */,
 				F57AF7A11CAB5E7B0006AE3E /* UIRefreshControl+AFNetworking.m in Sources */,
+				F57AF7AF1CAB60E60006AE3E /* DataDownLoader.m in Sources */,
 				F5292DC61CA65E1E00980154 /* RootView.m in Sources */,
 				F57AF7961CAB5E7B0006AE3E /* AFSecurityPolicy.m in Sources */,
+				F57AF7BA1CAB764A0006AE3E /* ListCell.m in Sources */,
 				F5292DC01CA65E0000980154 /* RootButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -489,6 +531,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = FolkMusic/PrefixHeader.pch;
 				INFOPLIST_FILE = FolkMusic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = quzg.FolkMusic;
@@ -501,6 +545,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = FolkMusic/PrefixHeader.pch;
 				INFOPLIST_FILE = FolkMusic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = quzg.FolkMusic;

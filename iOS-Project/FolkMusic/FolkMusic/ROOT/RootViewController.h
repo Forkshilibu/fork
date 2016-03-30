@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface RootViewController : UIViewController
+#import "DataDownLoader.h"
+@interface RootViewController : UIViewController<DataDownLoaderDelegate>
 
 @end
