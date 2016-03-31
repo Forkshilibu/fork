@@ -23,6 +23,7 @@
     "express-react-views": "^0.10.0",
     "jsmediatags": "^3.0.5",
     "leanengine": "^0.4.0",
+    "method-override": "^2.3.5",
     "react": "^0.14.7",
     "react-dom": "^0.14.7"
   },

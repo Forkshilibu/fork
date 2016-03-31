@@ -2,14 +2,16 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>第一个页面</title>
+    <title>测试页面</title>
   </head>
   <body>
-    <h1>喜悦</h1>
+    <h1 id="title"></h1>
+    <h2><span>作曲：</span> <span id="composer"></span></h2>
+    <h2><span>作词：</span> <span id="lyrics"></span></h2>
     <div class="music">
-      <img src="/images/poster-xuwei.jpg" alt="" /><br>
-      <audio src="http://7xsagi.com1.z0.glb.clouddn.com/xuwei%2Fxiyue.mp3" controls="controls" preload="preload"></audio>
-      <button type="button" name="button" onclick="xhr()">获取</button>
+      <img id="poster" alt="" /><br>
+      <audio id="music" controls="controls" preload="preload"></audio>
+      <!-- <button type="button" name="button">获取</button> -->
       <div class="info">
         <h3 id="title"></h3>
         <h3 id="album"></h3>
@@ -17,23 +19,27 @@
       </div>
     </div>
     <script type="text/javascript">
-        function xhr(){
+        (function xhr(){
           var xhr = new XMLHttpRequest();
           var url = encodeURIComponent(window.location.href);
-          xhr.open('GET','/getID3',true);
+          xhr.open('POST','/musiclist',true);
           xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-          xhr.send(null);
+          xhr.send("page=1&count=10");
           xhr.onreadystatechange = function(){
             console.log(xhr.readyState+','+xhr.status);
             if(xhr.readyState==4 && xhr.status==200){
               var res = JSON.parse(xhr.responseText);
               console.log(res);
-              document.getElementById('title').innerHTML = res.tags.title;
-              document.getElementById('album').innerHTML = res.tags.album;
-              document.getElementById('artist').innerHTML = res.tags.artist;
+              document.getElementById('title').innerHTML = res.results[0].title;
+              document.getElementById('composer').innerHTML = res.results[0].composer;
+              document.getElementById('lyrics').innerHTML = res.results[0].lyrics;
+              document.getElementById('poster').setAttribute("src",res.results[0].poster);
+              document.getElementById('music').setAttribute("src",res.results[0].music);
+
+              // document.getElementById('artist').innerHTML = res.tags.artist;
             }
           }
-        }
+        })();
     </script>
   </body>
 </html>
