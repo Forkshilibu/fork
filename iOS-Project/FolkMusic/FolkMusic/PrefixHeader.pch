@@ -1,0 +1,39 @@
+//
+//  PrefixHeader.pch
+//  FolkMusic
+//
+//  Created by quzg on 16/3/30.
+//  Copyright © 2016年 quzhenguo. All rights reserved.
+//
+
+//#ifndef PrefixHeader_pch
+//#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+//#endif /* PrefixHeader_pch */
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#endif
+
+
+#if 1
+#define BaseIP @"forkbook.leanapp.cn/musiclist?"
+#else
+#define BaseIP @"123.56.120.241"
+#endif
+
+#define BaseURL         [NSString stringWithFormat:@"http://%@",BaseIP]
+#define ScreenSize      [[UIScreen mainScreen] applicationFrame].size
+#define FONT(s)         [UIFont systemFontOfSize:s]
+#define BoldFONT(s)     [UIFont boldSystemFontOfSize:s]
+#define COLOR(RED, GREEN, BLUE)	[UIColor colorWithRed:RED/255.0 green:GREEN/255.0 blue:BLUE/255.0 alpha:1]
+
