@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F50CC4BA1CAE6A2D009F940D /* UserManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F50CC4B91CAE6A2D009F940D /* UserManagementViewController.m */; };
 		F5292D9D1CA65CAC00980154 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F5292D9C1CA65CAC00980154 /* main.m */; };
 		F5292DA01CA65CAC00980154 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F5292D9F1CA65CAC00980154 /* AppDelegate.m */; };
 		F5292DA81CA65CAC00980154 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5292DA71CA65CAC00980154 /* Assets.xcassets */; };
@@ -39,9 +40,12 @@
 		F57AF7B41CAB615B0006AE3E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F57AF7B31CAB615B0006AE3E /* MBProgressHUD.m */; };
 		F57AF7B71CAB71650006AE3E /* MusicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F57AF7B61CAB71650006AE3E /* MusicModel.m */; };
 		F57AF7BA1CAB764A0006AE3E /* ListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F57AF7B91CAB764A0006AE3E /* ListCell.m */; };
+		F5BD58B31CAD0A7300D15049 /* PlayMusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5BD58B21CAD0A7300D15049 /* PlayMusicViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F50CC4B81CAE6A2D009F940D /* UserManagementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManagementViewController.h; sourceTree = "<group>"; };
+		F50CC4B91CAE6A2D009F940D /* UserManagementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManagementViewController.m; sourceTree = "<group>"; };
 		F5292D981CA65CAC00980154 /* FolkMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FolkMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5292D9C1CA65CAC00980154 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F5292D9E1CA65CAC00980154 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 		F57AF7B61CAB71650006AE3E /* MusicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicModel.m; sourceTree = "<group>"; };
 		F57AF7B81CAB764A0006AE3E /* ListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListCell.h; sourceTree = "<group>"; };
 		F57AF7B91CAB764A0006AE3E /* ListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListCell.m; sourceTree = "<group>"; };
+		F5BD58B11CAD0A7300D15049 /* PlayMusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayMusicViewController.h; sourceTree = "<group>"; };
+		F5BD58B21CAD0A7300D15049 /* PlayMusicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayMusicViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				F5292DCB1CA65F7B00980154 /* Main */,
+				F5BD58B01CAD0A5E00D15049 /* PlayVC */,
 				F5292DCC1CA65F7B00980154 /* Sign */,
 				F5292DCD1CA65F7B00980154 /* UserManagement */,
 			);
@@ -268,6 +275,8 @@
 		F5292DCD1CA65F7B00980154 /* UserManagement */ = {
 			isa = PBXGroup;
 			children = (
+				F50CC4B81CAE6A2D009F940D /* UserManagementViewController.h */,
+				F50CC4B91CAE6A2D009F940D /* UserManagementViewController.m */,
 			);
 			path = UserManagement;
 			sourceTree = "<group>";
@@ -343,6 +352,15 @@
 				F57AF7B31CAB615B0006AE3E /* MBProgressHUD.m */,
 			);
 			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		F5BD58B01CAD0A5E00D15049 /* PlayVC */ = {
+			isa = PBXGroup;
+			children = (
+				F5BD58B11CAD0A7300D15049 /* PlayMusicViewController.h */,
+				F5BD58B21CAD0A7300D15049 /* PlayMusicViewController.m */,
+			);
+			path = PlayVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,6 +441,7 @@
 				F57AF7B71CAB71650006AE3E /* MusicModel.m in Sources */,
 				F57AF7A01CAB5E7B0006AE3E /* UIProgressView+AFNetworking.m in Sources */,
 				F5292DC91CA65E2F00980154 /* RootModel.m in Sources */,
+				F5BD58B31CAD0A7300D15049 /* PlayMusicViewController.m in Sources */,
 				F57AF79C1CAB5E7B0006AE3E /* AFNetworkActivityIndicatorManager.m in Sources */,
 				F57AF79B1CAB5E7B0006AE3E /* AFImageDownloader.m in Sources */,
 				F57AF79E1CAB5E7B0006AE3E /* UIButton+AFNetworking.m in Sources */,
@@ -431,6 +450,7 @@
 				F57AF7941CAB5E7B0006AE3E /* AFHTTPSessionManager.m in Sources */,
 				F5292DD01CA65FA100980154 /* MainViewController.m in Sources */,
 				F57AF7A21CAB5E7B0006AE3E /* UIWebView+AFNetworking.m in Sources */,
+				F50CC4BA1CAE6A2D009F940D /* UserManagementViewController.m in Sources */,
 				F57AF7B41CAB615B0006AE3E /* MBProgressHUD.m in Sources */,
 				F5292D9D1CA65CAC00980154 /* main.m in Sources */,
 				F5292DBD1CA65DEE00980154 /* RootViewController.m in Sources */,
@@ -482,7 +502,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -519,7 +539,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -534,6 +554,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = FolkMusic/PrefixHeader.pch;
 				INFOPLIST_FILE = FolkMusic/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = quzg.FolkMusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -548,6 +569,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = FolkMusic/PrefixHeader.pch;
 				INFOPLIST_FILE = FolkMusic/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = quzg.FolkMusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";

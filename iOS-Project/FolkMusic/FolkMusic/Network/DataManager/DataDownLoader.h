@@ -20,7 +20,8 @@
 - (void)startDownloadDataWithDic:(NSDictionary *)dictionary;
 
 //Creating an Upload Task
-- (void)startUploadDataWithDic:(NSDictionary *)dictionary withData:(NSData *)imageData1 otherData:(NSData *)imageData2;
+
+//- (void)startUploadDataWithDic:(NSDictionary *)dictionary withData:(NSData *)imageData1 otherData:(NSData *)imageData2;
 @end
 
 
@@ -29,7 +30,7 @@
 
 //- (void)getDataBack:(NSDictionary *)dic;
 @optional
-- (void)dataSuccess:(DataDownLoader *)theDataLoader withArray:(NSArray *)theArray;
+- (void)dataSuccess:(DataDownLoader *)theDataLoader dic:(NSDictionary *)theDic;
 - (void)dataFailed:(DataDownLoader *)theDataLoader withError:(NSString *)theError;
 - (void)dataOther:(DataDownLoader *)theDataLoader withDic:(NSDictionary *)theDic;//其他情况
 

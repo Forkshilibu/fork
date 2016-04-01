@@ -9,7 +9,8 @@
 #import "MainViewController.h"
 #import "MusicModel.h"
 #import "ListCell.h"
-
+#import "PlayMusicViewController.h"
+#import "UserManagementViewController.h"
 #define cellHeight 180
 @interface MainViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
@@ -24,35 +25,53 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    listArray = [[NSMutableArray alloc]initWithCapacity:0];
+    self.title = @"Music天堂";
     
+    listArray = [[NSMutableArray alloc]initWithCapacity:0];
     
     table = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, ScreenSize.width, ScreenSize.height) style:UITableViewStylePlain];
     [self.view addSubview:table];
     table.delegate = self;
     table.dataSource = self;
-    
-    
-    
-    
-    
-    
-    
+    table.separatorColor = [UIColor clearColor];
     DataDownLoader *download = [[DataDownLoader alloc]init];
     NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"1",@"page",@"12",@"count", nil];
     download.delegate = self;
     [download startDownloadDataWithDic:dic];
-    // Do any additional setup after loading the view.
+
+    UIButton *leftBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 60, 40)];
+    [leftBtn addTarget:self action:@selector(menu:) forControlEvents:UIControlEventTouchUpInside];
+//    [leftBtn setTitle:@"==" forState:UIControlStateNormal];
+    [leftBtn setImage:[UIImage imageNamed:@"icon-menu"] forState:UIControlStateNormal];
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc]initWithCustomView:leftBtn];
+    self.navigationItem.leftBarButtonItem = leftItem;
+    
 }
--(void)dataSuccess:(DataDownLoader *)theDataLoader withArray:(NSArray *)theArray{
-    NSLog(@"=====%@",theArray);
-    if (theArray.count > 0) {
-        for (NSDictionary *dic in theArray) {
-            MusicModel *model = [[MusicModel alloc]initWithDic:dic];
-            [listArray addObject:model];
+- (void)menu:(UIButton *)theButton{
+    //Go into UserManagementViewController
+    
+    UserManagementViewController *vc = [[UserManagementViewController alloc]init];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
+    [self presentViewController:nav animated:YES completion:^{
+        
+    }];
+    
+}
+- (void)dataSuccess:(DataDownLoader *)theDataLoader dic:(NSDictionary *)theDic{
+//    NSLog(@"=====%@",theArray);
+    if (theDic != nil) {
+        NSArray *recommendListArray = [theDic objectForKey:@"recommendList"];
+        if (recommendListArray.count > 0)
+        {
+            for (NSDictionary *theDic in recommendListArray)
+            {
+                MusicModel *model = [[MusicModel alloc]initWithDic:theDic];
+                [listArray addObject:model];
+            }
         }
         [table reloadData];
     }
+    
 }
 #pragma mark - delegate datasource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -65,30 +84,15 @@
         cell = [[ListCell alloc]initWithStyle:UITableViewCellStyleDefault cellSize:CGSizeMake(ScreenSize.width, cellHeight) reuseIdentifier:identify];
     }
     cell.model = [listArray objectAtIndex:indexPath.row];
-//    cell.theTextLabel.text = [self.dataArray objectAtIndex:indexPath.row];
-    //    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return cellHeight;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-//    _headLabel.text = [_dataArray objectAtIndex:indexPath.row];
-//    
-//    [UIView beginAnimations:nil context:nil];
-//    [UIView setAnimationDuration:0.4];
-//    
-//    
-//    self.frame = CGRectMake(theFrame.origin.x, theFrame.origin.y, theFrame.size.width  , headHeight);
-//    self.tableV.frame = CGRectMake(0, headHeight, tableViewWidth, 0);
-//    selected = NO;
-//    _arrowImageView.transform = CGAffineTransformRotate(_arrowImageView.transform, DEGREES_TO_RADIANS(180));
-//    
-//    [UIView commitAnimations];
-//    
-//    
-//    [self.delegate selectAtIndex:indexPath.row inListTableView:self];
+    PlayMusicViewController *vc = [[PlayMusicViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

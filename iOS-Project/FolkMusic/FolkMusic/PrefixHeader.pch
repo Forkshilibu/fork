@@ -32,7 +32,9 @@
 #endif
 
 #define BaseURL         [NSString stringWithFormat:@"http://%@",BaseIP]
-#define ScreenSize      [[UIScreen mainScreen] applicationFrame].size
+#define ScreenSizz      [[UIScreen mainScreen] applicationFrame].size
+#define ScreenSize      [[UIScreen mainScreen]bounds].size
+
 #define FONT(s)         [UIFont systemFontOfSize:s]
 #define BoldFONT(s)     [UIFont boldSystemFontOfSize:s]
 #define COLOR(RED, GREEN, BLUE)	[UIColor colorWithRed:RED/255.0 green:GREEN/255.0 blue:BLUE/255.0 alpha:1]

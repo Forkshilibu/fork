@@ -39,15 +39,16 @@
 //        NSString *jsonStr = [NSString stringWithFormat:@"%@", responseObject];
 //        //
 //                NSData *data = [[NSData alloc] initWithData:[jsonStr dataUsingEncoding:NSUTF8StringEncoding]];
-        NSDictionary *dic = (NSDictionary *)responseObject;
-        NSLog(@"%@",dic);
-
-        if (dic != nil && [[dic objectForKey:@"code"] integerValue] == 0)
+        NSDictionary *sourceDic = (NSDictionary *)responseObject;
+ 
+        if (sourceDic != nil && [[sourceDic objectForKey:@"code"] integerValue] == 0)
         {
-            NSArray *array = [dic objectForKey:@"results"];
-            if ([self.delegate respondsToSelector:@selector(dataSuccess:withArray:)])
+            
+            NSDictionary *dataDic = [sourceDic objectForKey:@"data"];
+
+            if ([self.delegate respondsToSelector:@selector(dataSuccess:dic:)])
             {
-                [_delegate dataSuccess:self withArray:array];
+                [_delegate dataSuccess:self dic:dataDic];
             }
          }else
         {
